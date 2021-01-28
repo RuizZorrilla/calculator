@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", loaded)
 
 function loaded() {
-
   const keys = document.querySelector('.buttons')
 
   keys.addEventListener('click', e => {
@@ -16,7 +15,6 @@ function loaded() {
     Array.from(key.parentNode.children).forEach(k => k.classList.remove('activeOp'))  
 
     if (e.target.matches('button')) {
-
       if (!action) {
         if (displayedNum === '' || prevKey === 'operator') {
           currentNumber.textContent = keyContent;
@@ -25,7 +23,6 @@ function loaded() {
           currentNumber.textContent = currentNumber.textContent + keyContent;
         }
       }
-
       if (
         action === 'pi' ||
         action === 'e'
@@ -95,7 +92,6 @@ function loaded() {
     }
   })
 }
-
 function calculate(num1, op, num2) {
   let result
 

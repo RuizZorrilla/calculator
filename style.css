@@ -11,6 +11,8 @@
     margin:1px;
     text-align: right;
     bottom: 0;
+    overflow: hidden;
+
   }
 
   .buttons {
@@ -92,7 +94,6 @@
 
   #result{
     font-size: 16px; 
-
   }
 
   .activeOp{
