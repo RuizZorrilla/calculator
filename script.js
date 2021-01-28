@@ -20,14 +20,27 @@ function loaded() {
       if (!action) {
         if (displayedNum === '' || prevKey === 'operator') {
           currentNumber.textContent = keyContent;
+          keys.dataset.previousKeyType='';
         } else {
           currentNumber.textContent = currentNumber.textContent + keyContent;
         }
       }
 
       if (
+        action === 'pi' ||
+        action === 'e'
+      ) {
+
+        if ( action === 'pi') {
+          currentNumber.textContent =  Math.PI;
+        } else {
+          currentNumber.textContent =  Math.E;
+        }
+      }
+
+      if (
         action === 'add' ||
-        action === 'subtract' ||
+        action === 'substract' ||
         action === 'multiply' ||
         action === 'pow' ||
         action === 'divide'
@@ -35,6 +48,7 @@ function loaded() {
         key.classList.add('activeOp') 
         keys.dataset.previousKeyType = 'operator';
         result.textContent = displayedNum;
+        currentNumber.textContent = '';
         keys.dataset.operator = action;
 
       }
