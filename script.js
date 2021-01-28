@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", loaded)
 
-
-
-
-
 function loaded() {
 
   const keys = document.querySelector('.buttons')
@@ -68,6 +64,8 @@ function loaded() {
       }
 
       if (action === 'delete') {
+        currentNumber.textContent = currentNumber.textContent.slice(0, displayedNum.length-1);
+
       }
 
       if (action === 'calculate') {
@@ -82,7 +80,6 @@ function loaded() {
 
     }
   })
-
 }
 
 function calculate(num1, op, num2) {
