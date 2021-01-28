@@ -54,19 +54,20 @@ function loaded() {
       }
 
       if (action === 'clear') {
-
-
+        keys.dataset.previousKeyType='';
+        currentNumber.textContent='';
+        result.textContent='';
       }
 
       if (action === 'sign') {
-
-
+        if(displayedNum.includes('-')){
+          currentNumber.textContent = currentNumber.textContent.replace('-', '')
+        }else{
+          currentNumber.textContent = '-' + displayedNum;
+        }
       }
 
-
       if (action === 'delete') {
-
-
       }
 
       if (action === 'calculate') {
